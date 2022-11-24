@@ -11,7 +11,7 @@ public class Box {
 	}
 	
 	public boolean inVerticalContact(int y) {
-		return y <= 0 || y >= BOX_SIZE;
+		return y <= 0; //|| y >= BOX_SIZE; 추가시 아래 박스라인에서도 튕김
 	}
 	
 	public int sizeOf() {

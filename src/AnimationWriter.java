@@ -8,7 +8,7 @@ public class AnimationWriter extends JPanel implements KeyListener, ActionListen
 	private BrickWriter brick_writer;
 	private Player player;
 	
-	public AnimationWriter(BoxWriter b, BallWriter ball, BrickWriter brick, Player p) {
+	public AnimationWriter(BoxWriter b, BallWriter ball, BrickWriter brick, Player p, int size) {
 		box_writer = b;
 		ball_writer = ball;
 		brick_writer = brick;
@@ -21,7 +21,7 @@ public class AnimationWriter extends JPanel implements KeyListener, ActionListen
 		JFrame f = new JFrame();
 		f.getContentPane().add(this);
 		f.setTitle("Brick Breaker");
-		f.setSize(720, 740);
+		f.setSize(size + 20, size + 40);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}

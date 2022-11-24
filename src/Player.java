@@ -20,7 +20,7 @@ public class Player{
 
 	public void paintComponent(Graphics g) {
 		g.setColor(Color.green);
-		g.fillRect(playerX, playerY, height, 8);
+		g.fillRect(playerX, playerY, height, 8); 
 	}
 	
 	public boolean isContact(int ball_x, int ball_y, int ball_radius) {
