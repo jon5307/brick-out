@@ -51,12 +51,18 @@ public class RankManager {
     return rank;
   }
 
+  /**
+   * 랭킹을 csv파일에 저장한다
+   */
   public void saveRank() {
     rankwriter = new RankWriter(rank_file);
     rankwriter.writeRank(rankers,HeadCount);
     rankwriter.close();
   }
 
+  /**
+   * 랭킹을 JFrame으로 보여준다
+   */
   public void ViewRank() {
     rankboard.ViewRank(rankers);
   }
