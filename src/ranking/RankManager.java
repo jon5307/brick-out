@@ -37,7 +37,8 @@ public class RankManager {
     int rank = 0;
     for (int i = 0; i < HeadCount; i++) {
       if (rankers[i].score() == score) {
-        rankers[i].setName(rankers[i].name() + "& " + name);
+        rankers[i].setName(rankers[i].name() + "&" + name);
+        rank = i+1;
         break;
       }
       else if (rankers[i].score() < score) {
@@ -45,9 +46,11 @@ public class RankManager {
           rankers[j] = rankers[j - 1];
         }
         rankers[i] = new Ranker(name, score);
+        rank = i+1;
         break;
       }
     }
+    saveRank();
     return rank;
   }
 

@@ -15,7 +15,7 @@ public class RankReader {
       infile = new BufferedReader(new FileReader(file_name));
     }
     catch (Exception e) {
-      System.out.println("PayrollReader Error - bad file name: " );
+      System.out.println("RankReader Error - bad file name: " );
       throw new RuntimeException(e.toString());
     }
   }
@@ -26,7 +26,7 @@ public class RankReader {
   public void close() {
     try { infile.close(); }
     catch (IOException e) {
-      System.out.println("PayrollReader Warning - file close failed");
+      System.out.println("RankReader Warning - file close failed");
     }
   }
 
@@ -49,10 +49,10 @@ public class RankReader {
       }
     }
     catch (IOException e) {
-      System.out.println("PayrollReader Error : " + e.getMessage());
+      System.out.println("RankReader Error : " + e.getMessage());
     }
     catch (RuntimeException e) {
-      System.out.println("PayrollReader Error - bad record format: " + e.getMessage() + " Skipping");
+      System.out.println("RankReader Error - bad record format: " + e.getMessage() + " Skipping");
       result = getNextRecord(); // 다음 줄 시도
     }
     return result;

@@ -6,8 +6,8 @@ public class RankTest {
   public static void main(String[] args) throws InterruptedException {
     RankManager rm = new RankManager();
     rm.ViewRank();
-    sleep(10000);
-    rm.regRank("?", 450);
+    sleep(5000);
+    System.out.println(rm.regRank("?", 460));
     rm.ViewRank();
   }
 }

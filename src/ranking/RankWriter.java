@@ -11,7 +11,7 @@ public class RankWriter {
       outfile = new PrintWriter(new FileWriter(file_name));
     }
     catch (Exception e) {
-      System.out.println("PayrollWriter Error: " + file_name);
+      System.out.println("RankWriter Error: " + file_name);
       throw new RuntimeException(e.toString());
     }
   }
