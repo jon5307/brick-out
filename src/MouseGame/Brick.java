@@ -1,4 +1,6 @@
-import java.awt.Rectangle;
+package MouseGame;
+
+import java.awt.*;
 
 public class Brick {
 	private int visible = 1;
@@ -26,7 +28,7 @@ public class Brick {
 		map_x = x;
 		map_y = y;
 		
-		size = a_h * 4; // a_h는 Start 클래스에서의 brick_map_height로 *4하면 box_size를 구할 수 있음
+		size = a_h * 4; // a_h는 KeyBoardGame.Start 클래스에서의 brick_map_height로 *4하면 box_size를 구할 수 있음
 
 		height = a_h / row;
 		width = a_w / col;

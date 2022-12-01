@@ -1,3 +1,5 @@
+package KeyBoardGame;
+
 import java.awt.*;
 
 public class BrickWriter {

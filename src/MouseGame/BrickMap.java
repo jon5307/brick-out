@@ -1,5 +1,7 @@
+package MouseGame;
+
 public class BrickMap {
-	private Brick GameMap[][];
+	private Brick[][] GameMap;
 	private int row;
 	private int col;
 	private int area_width;

@@ -1,18 +1,17 @@
+package MouseGame;
 
 public class MovingBall {
 	private int x_pos;
 	private int y_pos;
 	private int radius;
-	private int x_velocity = +5;
-	private int y_velocity = +5;
+	private double x_velocity = 0;
+	private double y_velocity = 0;
 	private Box container;
-	private Player player;
 	private BrickMap game;
 	
-	public MovingBall(int x_initial, int y_initial, int r, Box box, BrickMap bm, Player p) {
+	public MovingBall(int x_initial, int y_initial, int r, Box box, BrickMap bm) {
 		x_pos = x_initial;
 		y_pos = y_initial;
-		player = p;
 		radius = r;
 		container = box;
 		game = bm;
@@ -37,11 +36,10 @@ public class MovingBall {
 		y_pos += y_velocity * time_units;
 		if (container.inVerticalContact(y_pos))
 			y_velocity *= -1;
-		
-		if (player.isContact(x_pos, y_pos, radius)) {
-			y_velocity *= -1;
+		if(container.bottomContact(y_pos)) {
+			stop();
 		}
-		
+
 		Brick[][] game_map = new Brick[game.getRow()][game.getCol()];
 		game_map = game.getMap();
 		
@@ -62,5 +60,14 @@ public class MovingBall {
 		}
 		
 	}
-	
+
+	public void stop() {
+		x_velocity = 0;
+		y_velocity = 0;
+	}
+
+	public void setVelocity(double x, double y) {
+		x_velocity = x;
+		y_velocity = y;
+	}
 }

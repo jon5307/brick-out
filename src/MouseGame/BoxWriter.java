@@ -1,5 +1,6 @@
-import java.awt.Color;
-import java.awt.Graphics;
+package MouseGame;
+
+import java.awt.*;
 
 public class BoxWriter {
 	private Box box;
