@@ -1,22 +1,23 @@
 package MouseGame;
 
 import game.*;
+
 public class MMovingBall extends MovingBall {
 	public MMovingBall(int x_initial, int y_initial, int r, Box box, BrickMap bm, Player p) {
 		super(x_initial, y_initial, r, box, bm,p);
 	}
 	public void move (int time_units) {
-		x_pos += x_velocity * time_units;
 		if (container.inHorizontalContact(x_pos))
 			x_velocity *= -1;
-		y_pos += y_velocity * time_units;
 		if (container.inVerticalContact(y_pos))
 			y_velocity *= -1;
-		if(container.bottomContact(y_pos)) {
+		x_pos += x_velocity * time_units;
+		y_pos += y_velocity * time_units;
+		if (player.isContact(x_pos, y_pos, radius)) {
 			stop();
 		}
 
-		Brick[][] game_map = new Brick[game.getRow()][game.getCol()];
+		Brick[][] game_map;
 		game_map = game.getMap();
 
 		for (int i = 0; i < game_map.length; i++) {

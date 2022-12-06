@@ -20,7 +20,7 @@ public class StartMouse {
     int brick_map_height = box_size / 4;
     Box box = new Box(box_size);
 
-    Player player = new Player(box_size / 2 - box_size / 10, box_size - 8, 0);
+    Player player = new Player(0, box_size - 8, box_size);
     BrickMap board = new BrickMap(3, 7, brick_map_width, brick_map_height);
     MovingBall ball = new MMovingBall(box_size / 2, box_size / 2, ball_radius, box, board, player);
 

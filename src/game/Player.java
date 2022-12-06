@@ -5,13 +5,13 @@ import java.awt.*;
 public class Player {
 	private int playerX;
 	private int playerY;
-	private int height;
+	private int width;
 	private int score;
 	
 	public Player(int initial_x, int initial_y, int size) {
 		playerX = initial_x;
 		playerY = initial_y;
-		height = size;
+		width = size;
 		score = 0;
 	}
 	
@@ -22,13 +22,13 @@ public class Player {
 
 	public void paintComponent(Graphics g) {
 		g.setColor(Color.green);
-		g.fillRect(playerX, playerY, height, 8); 
+		g.fillRect(playerX, playerY, width, 8);
 	}
 	
 	public boolean isContact(int ball_x, int ball_y, int ball_radius) {
 		Rectangle ballRect = new Rectangle(ball_x, ball_y, ball_radius, ball_radius);
 
-		return ballRect.intersects(new Rectangle(playerX, playerY, height, 8));
+		return ballRect.intersects(new Rectangle(playerX, playerY, width, 8));
 	}
 	
 	/**

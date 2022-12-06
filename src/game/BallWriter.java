@@ -27,4 +27,8 @@ public class BallWriter {
 	public int xPosition() {
 		return ball.xPosition();
 	}
+
+	public int yPosition() {
+		return ball.yPosition();
+	}
 }
