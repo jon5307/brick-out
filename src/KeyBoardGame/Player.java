@@ -1,10 +1,8 @@
 package KeyBoardGame;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 
-public class Player{
+public class Player {
 	private int playerX;
 	private int playerY;
 	private int height;
@@ -28,11 +26,6 @@ public class Player{
 	public boolean isContact(int ball_x, int ball_y, int ball_radius) {
 		Rectangle ballRect = new Rectangle(ball_x, ball_y, ball_radius, ball_radius);
 
-		if (ballRect.intersects(new Rectangle(playerX, playerY, height, 8))) { 
-			return true; 
-		}
-		else { 
-			return false; 
-		}
+		return ballRect.intersects(new Rectangle(playerX, playerY, height, 8));
 	}
 }

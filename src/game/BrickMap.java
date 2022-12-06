@@ -1,4 +1,4 @@
-package MouseGame;
+package game;
 
 public class BrickMap {
 	private Brick[][] GameMap;

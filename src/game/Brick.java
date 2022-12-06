@@ -1,4 +1,4 @@
-package MouseGame;
+package game;
 
 import java.awt.*;
 
@@ -28,7 +28,7 @@ public class Brick {
 		map_x = x;
 		map_y = y;
 		
-		size = a_h * 4; // a_h는 KeyBoardGame.Start 클래스에서의 brick_map_height로 *4하면 box_size를 구할 수 있음
+		size = a_h * 4; // a_h는 Start 클래스에서의 brick_map_height로 *4하면 box_size를 구할 수 있음
 
 		height = a_h / row;
 		width = a_w / col;
@@ -36,15 +36,19 @@ public class Brick {
 	
 	public boolean isContact(int ball_x, int ball_y, int ball_radius) {
 		brick_x = map_x * width + size / 8;
-		brick_y = map_y * height + size / 8;;
-		
-		Rectangle ballRect = new Rectangle(ball_x, ball_y, ball_radius, ball_radius);
+		brick_y = map_y * height + size / 8;
+
 		Rectangle brickRect = new Rectangle(brick_x, brick_y, width, height);
-		
-		if (ballRect.intersects(brickRect)) { 
-			return true; 
+
+		int border_x, boarder_y;
+		for (int i = 0; i < 8; i++){
+			border_x = ball_x + (int)(ball_radius * Math.cos(i * Math.PI / 4));
+			boarder_y = ball_y + (int)(ball_radius * Math.sin(i * Math.PI / 4));
+			if (brickRect.contains(border_x, boarder_y)) {
+				return true;
+			}
 		}
-		else { return false; }
+		return false;
 	}
 	
 	public void setVisible(int n) { visible = n; }

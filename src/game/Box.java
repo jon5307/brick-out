@@ -1,4 +1,4 @@
-package MouseGame;
+package game;
 
 public class Box {
 	
@@ -19,6 +19,7 @@ public class Box {
 	public boolean bottomContact(int y) {
 		return y >= BOX_SIZE;
 	}
+	
 	public int sizeOf() {
 		return BOX_SIZE;
 	}

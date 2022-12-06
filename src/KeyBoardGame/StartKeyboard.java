@@ -1,5 +1,6 @@
 package KeyBoardGame;
 
+import game.*;
 import ranking.RankManager;
 
 public class StartKeyboard {
@@ -20,12 +21,12 @@ public class StartKeyboard {
 
 		BrickMap board = new BrickMap(3, 7, brick_map_width, brick_map_height);
 		Player player = new Player(box_size / 2 - box_size / 10, box_size - 8, box_size / 5);
-		MovingBall ball = new MovingBall(box_size / 2, box_size / 2, ball_radius, box, board, player);
+		MovingBall ball = new KMovingBall(box_size / 2, box_size / 2, ball_radius, box, board, player);
 
 		BallWriter ball_writer = new BallWriter(ball);
 		BoxWriter box_writer = new BoxWriter(box);
 		BrickWriter brick_writer = new BrickWriter(board);
-		AnimationWriter writer = new AnimationWriter(box_writer, ball_writer, brick_writer, player, box_size);
+		KAnimationWriter writer = new KAnimationWriter(box_writer, ball_writer, brick_writer, player, box_size);
 		
 		new BrickBreakerController(ball, writer).runAnimation();
 	}

@@ -1,4 +1,4 @@
-package MouseGame;
+package game;
 
 import java.awt.*;
 

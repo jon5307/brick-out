@@ -1,9 +1,10 @@
-package KeyBoardGame;
+package game;
+
 
 import java.awt.*;
 
 public class BrickWriter {
-	private Brick GameMap[][];
+	private Brick[][] GameMap;
 	private int row;
 	private int col;
 	private int b_height;

@@ -1,4 +1,4 @@
-package KeyBoardGame;
+package game;
 
 public class BrickBreakerController {
 	private MovingBall ball;

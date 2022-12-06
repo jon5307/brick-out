@@ -4,7 +4,7 @@ import ranking.*;
 import MouseGame.*;
 
 public class test {
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		ModeSelect first_frame = new ModeSelect();
 		RankManager rank_manager = new RankManager();
 
