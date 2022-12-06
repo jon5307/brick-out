@@ -39,15 +39,20 @@ public class Brick {
 		Random random = new Random();
 		brick_hp = random.nextInt(round, round+3); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
 	}
-	
+
 	public boolean isContact(int ball_x, int ball_y, int ball_radius) {
 		brick_x = map_x * width + size / 8;
 		brick_y = map_y * height + size / 8;
 
 		Rectangle brickRect = new Rectangle(brick_x, brick_y, width, height);
-		
-		if (ballRect.intersects(brickRect)) { 
-			return true; 
+
+		int border_x, boarder_y;
+		for (int i = 0; i < 8; i++){
+			border_x = ball_x + (int)(ball_radius * Math.cos(i * Math.PI / 4));
+			boarder_y = ball_y + (int)(ball_radius * Math.sin(i * Math.PI / 4));
+			if (brickRect.contains(border_x, boarder_y)) {
+				return true;
+			}
 		}
 		return false;
 	}

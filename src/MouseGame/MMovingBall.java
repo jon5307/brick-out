@@ -2,8 +2,8 @@ package MouseGame;
 
 import game.*;
 public class MMovingBall extends MovingBall {
-	public MMovingBall(int x_initial, int y_initial, int r, Box box, BrickMap bm) {
-		super(x_initial, y_initial, r, box, bm);
+	public MMovingBall(int x_initial, int y_initial, int r, Box box, BrickMap bm, Player p) {
+		super(x_initial, y_initial, r, box, bm,p);
 	}
 	public void move (int time_units) {
 		x_pos += x_velocity * time_units;

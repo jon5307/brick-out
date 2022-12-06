@@ -1,16 +1,13 @@
 package KeyBoardGame;
 
-import game.Box;
-import game.Brick;
-import game.BrickMap;
-import game.MovingBall;
+import game.*;
 
 public class KMovingBall extends MovingBall {
 
 	protected Player player;
 
 	public KMovingBall(int x_initial, int y_initial, int r, Box box, BrickMap bm, Player p) {
-		super(x_initial, y_initial, r, box, bm);
+		super(x_initial, y_initial, r, box, bm,p);
 		player = p;
 	}
 	public void move (int time_units) {

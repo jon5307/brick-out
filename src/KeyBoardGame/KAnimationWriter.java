@@ -1,27 +1,16 @@
 package KeyBoardGame;
 
-import game.BallWriter;
-import game.BoxWriter;
-import game.BrickWriter;
+import game.*;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class KAnimationWriter extends game.AnimationWriter implements KeyListener{
+public class KAnimationWriter extends AnimationWriter implements KeyListener{
 
-	protected Player player;
-
-	public KAnimationWriter(BoxWriter b, BallWriter ball, BrickWriter brick, Player p, int size) {
-		super(b, ball, brick, size);
+	public KAnimationWriter(BoxWriter b, BallWriter ball, BrickWriter brick, ScoreWriter sw, Player p, int size) {
+		super(b, ball, brick, sw, p, size);
 		addKeyListener(this);
-		player = p;
-	}
-
-	public void paintComponent(Graphics g){
-		super.paintComponent(g);
-		player.paintComponent(g);
 	}
 
 	public void actionPerformed(ActionEvent e) { repaint(); }

@@ -1,4 +1,4 @@
-package KeyBoardGame;
+package game;
 
 import java.awt.*;
 
@@ -14,7 +14,7 @@ public class ScoreWriter {
 		player = p;
 		box_size = b_s;
 	}
-	
+
 	public void paintComponent(Graphics g) {
 		g.setColor(Color.black);
 		g.setFont(new Font("", Font.BOLD, box_size/20)); //box_size의 비율로 크기 바꿈

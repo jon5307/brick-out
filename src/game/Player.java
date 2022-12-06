@@ -1,4 +1,4 @@
-package KeyBoardGame;
+package game;
 
 import java.awt.*;
 

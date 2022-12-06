@@ -10,12 +10,14 @@ public abstract class MovingBall {
 	protected double y_velocity = 5;
 	protected Box container;
 	protected BrickMap game;
+	protected Player player;
 	
-	public MovingBall(int x_initial, int y_initial, int r, Box box, BrickMap bm) {
+	public MovingBall(int x_initial, int y_initial, int r, Box box, BrickMap bm, Player p) {
 		x_pos = x_initial;
 		y_pos = y_initial;
 		radius = r;
 		container = box;
+		player = p;
 		game = bm;
 	}
 	

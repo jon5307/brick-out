@@ -5,8 +5,8 @@ import game.*;
 
 public class MAnimationWriter extends AnimationWriter implements MouseListener, ActionListener{
 
-  public MAnimationWriter(BoxWriter b, BallWriter ball, BrickWriter brick, int size) {
-    super(b, ball, brick, size);
+  public MAnimationWriter(BoxWriter b, BallWriter ball, BrickWriter brick, ScoreWriter sw,Player p, int size) {
+    super(b, ball, brick, sw, p, size);
     addMouseListener(this);
   }
 
