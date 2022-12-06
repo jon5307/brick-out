@@ -2,7 +2,7 @@ package game;
 
 
 
-public class MovingBall {
+public abstract class MovingBall {
 	protected int x_pos;
 	protected int y_pos;
 	protected int radius;
