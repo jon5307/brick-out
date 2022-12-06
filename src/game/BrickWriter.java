@@ -29,7 +29,14 @@ public class BrickWriter {
 					
 					g.setStroke(new BasicStroke(3));
 					g.setColor(Color.black);
-					g.drawRect(j * b_width + size / 8, i * b_height + size / 8, b_width, b_height);
+					g.drawRect(j * b_width + size / 8
+							, i * b_height + size / 8, b_width, b_height);
+					
+					g.setColor(Color.black);
+					g.setFont(new Font("", Font.BOLD, size/20)); //box_size의 비율로 크기 바꿈
+					g.drawString(GameMap[i][j].getBrickHp()+"", 
+							 j * b_width + size / 8 + b_width / 2 , 
+							 i * b_height + size / 8 + b_height / 2 + 5);
 				}
 			}
 		}

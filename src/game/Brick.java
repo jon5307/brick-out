@@ -1,6 +1,7 @@
 package game;
 
-import java.awt.*;
+import java.awt.Rectangle;
+import java.util.Random;
 
 public class Brick {
 	private int visible = 1;
@@ -13,7 +14,9 @@ public class Brick {
 	private int brick_x; // Brick의 좌표 (사각형 왼쪽 상단)
 	private int brick_y; // 
 	
-	
+	private int brick_hp; // 공이 닿아야 하는 횟수를 brick의 체력(hp)로 설정
+
+
 	
 	/**
 	 * Brick을 하나씩 정의
@@ -24,7 +27,7 @@ public class Brick {
 	 * @param a_w BrickMap의 너비
 	 * @param a_h BrickMap의 높이
 	 */
-	public Brick(int x, int y, int row, int col, int a_w, int a_h) {
+	public Brick(int x, int y, int row, int col, int a_w, int a_h, int round) {
 		map_x = x;
 		map_y = y;
 		
@@ -32,6 +35,9 @@ public class Brick {
 
 		height = a_h / row;
 		width = a_w / col;
+
+		Random random = new Random();
+		brick_hp = random.nextInt(round, round+3); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
 	}
 	
 	public boolean isContact(int ball_x, int ball_y, int ball_radius) {
@@ -39,21 +45,18 @@ public class Brick {
 		brick_y = map_y * height + size / 8;
 
 		Rectangle brickRect = new Rectangle(brick_x, brick_y, width, height);
-
-		int border_x, boarder_y;
-		for (int i = 0; i < 8; i++){
-			border_x = ball_x + (int)(ball_radius * Math.cos(i * Math.PI / 4));
-			boarder_y = ball_y + (int)(ball_radius * Math.sin(i * Math.PI / 4));
-			if (brickRect.contains(border_x, boarder_y)) {
-				return true;
-			}
+		
+		if (ballRect.intersects(brickRect)) { 
+			return true; 
 		}
 		return false;
 	}
 	
-	public void setVisible(int n) { visible = n; }
+	public boolean setVisible(int n) { visible = n; return true; } // MovingBall의 이중 for문에서 ? : 연산을 위해 return값 수정
 	public int getVisible() { return visible; }
 	public int getX() { return brick_x; }
 	public int getY() { return brick_y; }
 	public int getWidth() { return width; }
+	public int getBrickHp() { return brick_hp; }
+	public boolean setBrickHp() { brick_hp -= 1; return false; } //dummy의 참과 거짓을 구분하기 위해 false로 바꿈
 }

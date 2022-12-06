@@ -6,11 +6,13 @@ public class Player {
 	private int playerX;
 	private int playerY;
 	private int height;
+	private int score;
 	
 	public Player(int initial_x, int initial_y, int size) {
 		playerX = initial_x;
 		playerY = initial_y;
 		height = size;
+		score = 0;
 	}
 	
 	public void moveRight() { playerX += 20; }
@@ -27,5 +29,19 @@ public class Player {
 		Rectangle ballRect = new Rectangle(ball_x, ball_y, ball_radius, ball_radius);
 
 		return ballRect.intersects(new Rectangle(playerX, playerY, height, 8));
+	}
+	
+	/**
+	 * 브릭을 하나 깨부실때마다 5점씩 획득
+	 */
+	public void plusScore() {
+		score +=5 ;
+	}
+	
+	/**
+	 * @return 현재 점수
+	 */
+	public int getScore() {
+		return score;
 	}
 }
