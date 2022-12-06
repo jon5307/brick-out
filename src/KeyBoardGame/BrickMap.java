@@ -23,7 +23,7 @@ public class BrickMap {
 		GameMap = new Brick[row][col];
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
-				GameMap[i][j] = new Brick(j, i, row, col, area_width, area_height);
+				GameMap[i][j] = new Brick(j, i, row, col, area_width, area_height, 1); // 1은 아직 만들어지지 않은 round 개념을 피하기 위해 생성.
 			}
 		}
 	}

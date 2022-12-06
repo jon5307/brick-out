@@ -25,7 +25,8 @@ public class StartKeyboard {
 		BallWriter ball_writer = new BallWriter(ball);
 		BoxWriter box_writer = new BoxWriter(box);
 		BrickWriter brick_writer = new BrickWriter(board);
-		AnimationWriter writer = new AnimationWriter(box_writer, ball_writer, brick_writer, player, box_size);
+		ScoreWriter score_writer = new ScoreWriter(player, box_size);
+		AnimationWriter writer = new AnimationWriter(box_writer, ball_writer, brick_writer, score_writer, player, box_size);
 		
 		new BrickBreakerController(ball, writer).runAnimation();
 	}
