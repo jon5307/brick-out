@@ -3,7 +3,7 @@ package MouseGame;
 import game.*;
 
 public class MMovingBall extends MovingBall {
-	public MMovingBall(int x_initial, int y_initial, int r, Box box, BrickMap bm, Player p) {
+	public MMovingBall(int x_initial, int y_initial, int r, Box box, MBrickMap bm, Player p) {
 		super(x_initial, y_initial, r, box, bm,p);
 	}
 	public void move (int time_units) {
@@ -15,6 +15,8 @@ public class MMovingBall extends MovingBall {
 		y_pos += y_velocity * time_units;
 		if (player.isContact(x_pos, y_pos, radius)) {
 			stop();
+			// 게임 종료 체크
+
 		}
 
 		Brick[][] game_map;

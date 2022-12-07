@@ -19,7 +19,7 @@ public class StartKeyboard {
 		int brick_map_height = box_size / 4;
 		Box box = new Box(box_size);
 
-		BrickMap board = new BrickMap(3, 7, brick_map_width, brick_map_height);
+		BrickMap board = new KBrickMap(3, 7, brick_map_width, brick_map_height);
 		Player player = new Player(box_size / 2 - box_size / 10, box_size - 8, box_size / 5);
 		MovingBall ball = new KMovingBall(box_size / 2, box_size / 2, ball_radius, box, board, player);
 

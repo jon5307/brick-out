@@ -3,18 +3,19 @@ package game;
 import java.awt.Rectangle;
 import java.util.Random;
 
-public class Brick {
-	private int visible = 1;
-	private int map_x; // Brick의 열 번호
-	private int map_y; // Brick의 행 번호
-	private int height; // Brick의 높이
-	private int width; // Brick의 너비 
-	private int size; // box_size
+public abstract class Brick {
+	protected int visible = 1;
+	protected int map_x; // Brick의 열 번호
+	protected int map_y; // Brick의 행 번호
+	protected int height; // Brick의 높이
+	protected int width; // Brick의 너비
+	protected int size; // box_size
 	
-	private int brick_x; // Brick의 좌표 (사각형 왼쪽 상단)
-	private int brick_y; // 
+	protected int brick_x; // Brick의 좌표 (사각형 왼쪽 상단)
+	protected int brick_y; //
 	
-	private int brick_hp; // 공이 닿아야 하는 횟수를 brick의 체력(hp)로 설정
+	protected int brick_hp; // 공이 닿아야 하는 횟수를 brick의 체력(hp)로 설정
+	protected int x_bound; // BrickMap의 너비
 
 
 	
@@ -40,22 +41,7 @@ public class Brick {
 		brick_hp = random.nextInt(round, round+3); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
 	}
 
-	public boolean isContact(int ball_x, int ball_y, int ball_radius) {
-		brick_x = map_x * width + size / 8;
-		brick_y = map_y * height + size / 8;
-
-		Rectangle brickRect = new Rectangle(brick_x, brick_y, width, height);
-
-		int border_x, boarder_y;
-		for (int i = 0; i < 8; i++){
-			border_x = ball_x + (int)(ball_radius * Math.cos(i * Math.PI / 4));
-			boarder_y = ball_y + (int)(ball_radius * Math.sin(i * Math.PI / 4));
-			if (brickRect.contains(border_x, boarder_y)) {
-				return true;
-			}
-		}
-		return false;
-	}
+	public abstract boolean isContact(int ball_x, int ball_y, int ball_radius);
 	
 	public boolean setVisible(int n) { visible = n; return true; } // MovingBall의 이중 for문에서 ? : 연산을 위해 return값 수정
 	public int getVisible() { return visible; }

@@ -19,7 +19,7 @@ public class KMovingBall extends MovingBall {
 			y_velocity *= -1;
 		}
 
-		Brick[][] game_map = new Brick[game.getRow()][game.getCol()];
+		Brick[][] game_map;
 		game_map = game.getMap();
 
 		for (int i = 0; i < game_map.length; i++) {

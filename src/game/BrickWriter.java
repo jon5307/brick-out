@@ -4,12 +4,12 @@ package game;
 import java.awt.*;
 
 public class BrickWriter {
-	private Brick[][] GameMap;
-	private int row;
-	private int col;
-	private int b_height;
-	private int b_width;
-	private int size;
+	protected Brick[][] GameMap;
+	protected int row;
+	protected int col;
+	protected int b_height;
+	protected int b_width;
+	protected int size;
 	
 	public BrickWriter(BrickMap bm) {
 		GameMap = bm.getMap();
