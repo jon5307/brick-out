@@ -3,6 +3,7 @@ package MouseGame;
 import game.*;
 
 public class MMovingBall extends MovingBall {
+	private boolean wasAtPlayer = false;
 	public MMovingBall(int x_initial, int y_initial, int r, Box box, MBrickMap bm, Player p) {
 		super(x_initial, y_initial, r, box, bm,p);
 	}
@@ -13,10 +14,16 @@ public class MMovingBall extends MovingBall {
 			y_velocity *= -1;
 		x_pos += x_velocity * time_units;
 		y_pos += y_velocity * time_units;
-		if (player.isContact(x_pos, y_pos, radius)) {
-			stop();
-			// 게임 종료 체크
 
+		// 바닥에 닿음
+		if (player.isContact(x_pos, y_pos, radius) && !wasAtPlayer) {
+			stop();
+			wasAtPlayer = true;
+			player.plusScore();
+		}
+		// 바닥에서 떨어짐
+		if (x_velocity > 0 || y_velocity > 0) {
+			wasAtPlayer = false;
 		}
 
 		Brick[][] game_map;

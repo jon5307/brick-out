@@ -44,5 +44,9 @@ public abstract class MovingBall {
 		x_velocity = x;
 		y_velocity = y;
 	}
+	public void gameOver(){
+		// TODO
+		// 점수 저장, 게임 종료 안내 등을 수행하는 코드 작성해야함
+	}
 	
 }

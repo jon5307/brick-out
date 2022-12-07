@@ -36,11 +36,10 @@ public abstract class Brick {
 
 		height = a_h / row;
 		width = a_w / col;
-
-		Random random = new Random();
-		brick_hp = random.nextInt(round, round+3); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
+		setBrick(round);
 	}
 
+	public abstract void setBrick(int round);
 	public abstract boolean isContact(int ball_x, int ball_y, int ball_radius);
 	
 	public boolean setVisible(int n) { visible = n; return true; } // MovingBall의 이중 for문에서 ? : 연산을 위해 return값 수정

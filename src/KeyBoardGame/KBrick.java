@@ -3,6 +3,7 @@ package KeyBoardGame;
 import game.Brick;
 
 import java.awt.*;
+import java.util.Random;
 
 public class KBrick extends Brick {
 	/**
@@ -21,8 +22,14 @@ public class KBrick extends Brick {
 	}
 
 	@Override
+	public void setBrick(int round) {
+		Random random = new Random();
+		brick_hp = random.nextInt(round, round+3); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
+	}
+
+	@Override
 	public boolean isContact(int ball_x, int ball_y, int ball_radius) {
-		brick_x = map_x * width;
+		brick_x = map_x * width + size / 8;
 		brick_y = map_y * height + size / 8;
 
 		Rectangle brickRect = new Rectangle(brick_x, brick_y, width, height);
