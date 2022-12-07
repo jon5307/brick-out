@@ -7,16 +7,18 @@ public class Player {
 	private int playerY;
 	private int width;
 	private int score;
+	private int box_size;
 	
-	public Player(int initial_x, int initial_y, int size) {
+	public Player(int initial_x, int initial_y, int size, int box_size) {
 		playerX = initial_x;
 		playerY = initial_y;
 		width = size;
 		score = 0;
+		this.box_size = box_size;
 	}
 	
-	public void moveRight() { playerX += 20; }
-	public void moveLeft() { playerX -= 20; }
+	public void moveRight() { if(playerX < box_size - width) playerX += 20; }
+	public void moveLeft() { if(playerX > 0) playerX -= 20; }
 	public int getX() { return playerX; }
 	public int getY() { return playerY; }
 
