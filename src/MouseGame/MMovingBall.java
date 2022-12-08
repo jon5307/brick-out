@@ -20,6 +20,7 @@ public class MMovingBall extends MovingBall {
 			stop();
 			wasAtPlayer = true;
 			player.plusScore();
+			((MBrickMap)game).brickDown();
 		}
 		// 바닥에서 떨어짐
 		if (x_velocity > 0 || y_velocity > 0) {

@@ -25,4 +25,7 @@ public class MBrickMap extends BrickMap {
 			}
 		}
 	}
+	public boolean brickDown(){
+
+	}
 }
