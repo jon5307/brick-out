@@ -19,7 +19,6 @@ public class MMovingBall extends MovingBall {
 		if (player.isContact(x_pos, y_pos, radius) && !wasAtPlayer) {
 			stop();
 			wasAtPlayer = true;
-			player.plusScore();
 		}
 		// 바닥에서 떨어짐
 		if (x_velocity > 0 || y_velocity > 0) {
@@ -41,6 +40,7 @@ public class MMovingBall extends MovingBall {
 					else {
 						y_velocity *= -1;
 					}
+					player.plusScore();
 				}
 			}
 		}

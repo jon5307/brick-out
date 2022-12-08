@@ -1,6 +1,10 @@
 package game;
 
 
+import ranking.RankManager;
+import ranking.Ranker;
+
+import javax.swing.*;
 
 public abstract class MovingBall {
 	protected int x_pos;
@@ -45,7 +49,8 @@ public abstract class MovingBall {
 		y_velocity = y;
 	}
 	public void gameOver(){
-		// TODO
+		RankManager rm = new RankManager();
+		rm.regRank(JOptionPane.showInputDialog(null, "Input your name", null), player.getScore());
 		// 점수 저장, 게임 종료 안내 등을 수행하는 코드 작성해야함
 	}
 	
