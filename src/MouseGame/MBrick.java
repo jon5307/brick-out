@@ -1,6 +1,7 @@
 package MouseGame;
 
 import game.Brick;
+import game.Player;
 
 import java.awt.*;
 import java.util.Random;

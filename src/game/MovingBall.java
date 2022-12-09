@@ -1,6 +1,5 @@
 package game;
 
-
 import ranking.RankManager;
 import ranking.Ranker;
 
