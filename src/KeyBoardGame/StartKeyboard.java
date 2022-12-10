@@ -29,6 +29,6 @@ public class StartKeyboard {
 		ScoreWriter score_writer = new ScoreWriter(player, box_size);
 		KAnimationWriter writer = new KAnimationWriter(box_writer, ball_writer, brick_writer,  score_writer, player, box_size);
 
-		new BrickBreakerController(ball, writer).runAnimation();
+		new KBrickBreakerController(ball, writer).runAnimation();
 	}
 }
