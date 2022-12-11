@@ -29,7 +29,6 @@ public class Player {
 	
 	public boolean isContact(int ball_x, int ball_y, int ball_radius) {
 		Rectangle ballRect = new Rectangle(ball_x, ball_y, ball_radius, ball_radius);
-
 		return ballRect.intersects(new Rectangle(playerX, playerY, width, 8));
 	}
 	

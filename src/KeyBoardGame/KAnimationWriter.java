@@ -12,10 +12,12 @@ public class KAnimationWriter extends AnimationWriter implements KeyListener{
 	private boolean isStart = false;
 	private RoundStartButton rSB;
 	private RoundWriter round_writer;
+	private int frame_size;
 	
 	public KAnimationWriter(BoxWriter b, BallWriter ball, BrickWriter brick, ScoreWriter sw, RoundWriter rw,Player p, int size) {
 		super(b, ball, brick, sw, p, size);
 		round_writer = rw;
+		frame_size = size;
 		JFrame j = super.getFrame();
 		rSB = new RoundStartButton(this, rw, brick, ball.getMovingBall());
 		j.add(rSB, BorderLayout.SOUTH);
@@ -53,6 +55,10 @@ public class KAnimationWriter extends AnimationWriter implements KeyListener{
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			player.moveLeft();
 		}
+	}
+	
+	public int getFrameSize() {
+		return frame_size;
 	}
 	
 	public boolean getIsStart() {
