@@ -48,5 +48,6 @@ public abstract class Brick {
 	public int getY() { return brick_y; }
 	public int getWidth() { return width; }
 	public int getBrickHp() { return brick_hp; }
+	public boolean setBrickHealth(int n) {brick_hp = n; return true;}
 	public boolean setBrickHp() { brick_hp -= 1; return false; } //dummy의 참과 거짓을 구분하기 위해 false로 바꿈
 }

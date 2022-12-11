@@ -17,22 +17,27 @@ public class MBrick extends Brick {
 	 * @param a_h   BrickMap의 높이
 	 * @param round
 	 */
+	private int floor;
 	public MBrick(int x, int y, int row, int col, int a_w, int a_h, int round) {
 		super(x, y, row, col, a_w, a_h, round);
+		floor = y;
 	}
 
 	@Override
 	public void setBrick(int round) {
 		Random random = new Random();
-		brick_hp = round * random.nextInt(0, 2); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
+		if (floor == 0)
+			brick_hp = round * random.nextInt(0, 2); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
+		else
+			brick_hp = round;
 		if (brick_hp == 0) {
 			setVisible(0);
 		}
 	}
 
 	public boolean isContact(int ball_x, int ball_y, int ball_radius) {
-		brick_x = map_x * width + 5;
-		brick_y = map_y * height + size / 8;
+		brick_x = map_x * width;
+		brick_y = map_y * height;
 
 		Rectangle brickRect = new Rectangle(brick_x, brick_y, width, height);
 

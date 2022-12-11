@@ -14,18 +14,18 @@ public class MBrickWriter extends BrickWriter {
 			for (int j = 0; j < col; j++) {
 				if (GameMap[i][j].getVisible() > 0) {
 					g.setColor(Color.pink);
-					g.fillRect(j * b_width + 5, i * b_height + size / 8, b_width, b_height);
+					g.fillRect(j * b_width, i * b_height, b_width, b_height);
 
 					g.setStroke(new BasicStroke(3));
 					g.setColor(Color.black);
-					g.drawRect(j * b_width + 5
-							, i * b_height + size / 8, b_width, b_height);
+					g.drawRect(j * b_width
+							, i * b_height, b_width, b_height);
 
 					g.setColor(Color.black);
-					g.setFont(new Font("", Font.BOLD, size/20)); //box_size의 비율로 크기 바꿈
+					g.setFont(new Font("", Font.BOLD, size/100)); //box_size의 비율로 크기 바꿈
 					g.drawString(GameMap[i][j].getBrickHp()+"",
-							j * b_width + 5 + b_width / 2 ,
-							i * b_height + size / 8 + b_height / 2 + 5);
+							j * b_width + b_width / 2 - 3,
+							i * b_height + b_height / 2 + 5);
 				}
 			}
 		}
