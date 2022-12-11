@@ -12,12 +12,12 @@ public class MBrickMap extends BrickMap {
 	 * @param w BrickMap의 너비
 	 * @param h BrickMap의 높이
 	 */
-	public MBrickMap(int r, int c, int w, int h) {
-		super(r, c, w, h);
+	public MBrickMap(int r, int c, int w, int h, int round) { // 라운드 기능 추가에 따른 int type parameter 추가
+		super(r, c, w, h, round);
 	}
 
 	@Override
-	public void setBrick() {
+	public void setBrick(int round) { // 라운드 기능 추가에 따른 int type parameter 추가
 		GameMap = new MBrick[row][col];
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {

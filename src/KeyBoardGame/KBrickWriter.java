@@ -6,15 +6,27 @@ import game.BrickWriter;
 import java.awt.*;
 
 public class KBrickWriter extends BrickWriter {
+	
+	//private BrickMap bm;
+	private boolean isRest = true;
+	
 	public KBrickWriter(BrickMap bm) {
 		super(bm);
+		//this.bm = bm;
+	}
+	
+	public void changeBrickMap(BrickMap new_bm) {
+		GameMap = new_bm.getMap();
+		System.out.println(GameMap);
 	}
 
 	@Override
 	public void paintComponent(Graphics2D g) {
+		boolean rest = false;
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
 				if (GameMap[i][j].getVisible() > 0) {
+					rest = true;
 					g.setColor(Color.pink);
 					g.fillRect(j * b_width + size / 8, i * b_height + size / 8, b_width, b_height);
 
@@ -31,5 +43,11 @@ public class KBrickWriter extends BrickWriter {
 				}
 			}
 		}
+		isRest = rest;
 	}
+	
+	public boolean isThisRest() {
+		return isRest;
+	}
+	
 }

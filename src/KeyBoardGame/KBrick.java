@@ -6,6 +6,8 @@ import java.awt.*;
 import java.util.Random;
 
 public class KBrick extends Brick {
+	
+	
 	/**
 	 * Brick을 하나씩 정의
 	 *
@@ -44,4 +46,6 @@ public class KBrick extends Brick {
 		}
 		return false;
 	}
+	
+	
 }

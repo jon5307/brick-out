@@ -19,9 +19,10 @@ public class StartMouse {
 		int brick_map_width = box_size;
 		int brick_map_height = box_size / 4;
 		Box box = new Box(box_size);
+		int first_round = 1; // 추가됨
 
 		Player player = new Player(0, box_size - 8, box_size, box_size);
-		MBrickMap board = new MBrickMap(3, 9, brick_map_width, brick_map_height);
+		MBrickMap board = new MBrickMap(3, 9, brick_map_width, brick_map_height, first_round); // 라운드 기능 추가에 따른 int type parameter 추가
 		MovingBall ball = new MMovingBall(box_size / 2, box_size / 2, ball_radius, box, board, player);
 
 		BallWriter ball_writer = new BallWriter(ball);
