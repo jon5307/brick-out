@@ -47,6 +47,7 @@ public abstract class MovingBall {
 	public void gameOver(){
 		// TODO
 		// 점수 저장, 게임 종료 안내 등을 수행하는 코드 작성해야함
+		System.out.println("게임 종료");
 	}
 	
 }

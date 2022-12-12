@@ -21,7 +21,8 @@ public class MMovingBall extends MovingBall {
 		if (player.isContact(x_pos, y_pos, radius) && !wasAtPlayer) {
 			stop();
 			if (player.getScore() >= 5)
-				mBrickMap.newSetBrick();
+				if (mBrickMap.newSetBrick())
+					gameOver();
 			wasAtPlayer = true;
 			((MBrickMap)game).brickDown();
 		}

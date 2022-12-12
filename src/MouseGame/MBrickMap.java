@@ -33,7 +33,15 @@ public class MBrickMap extends BrickMap {
 
 		return false;
 	}
-	public void newSetBrick() {
+	public boolean newSetBrick() {
+		boolean gameover = false;
+		for (int j = 0; j < col; j++) {
+			if (GameMap[row-1][j].getVisible() == 1) {
+				if (GameMap[row-1][j].getVisible() == 1) {
+					gameover = true;
+				}
+			}
+		}
 		for (int i = 8; i > 0; i--) {
 			for (int j = 0; j < col; j++) {
 				GameMap[i][j].setVisible(GameMap[i - 1][j].getVisible());
@@ -46,5 +54,6 @@ public class MBrickMap extends BrickMap {
 			GameMap[0][j] = new MBrick(j, 0, row, col, area_width, area_height, round + 1);
 		}
 		round += 1;
+		return gameover;
 	}
 }
