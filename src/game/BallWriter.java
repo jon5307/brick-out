@@ -31,4 +31,8 @@ public class BallWriter {
 	public int yPosition() {
 		return ball.yPosition();
 	}
+	
+	public MovingBall getMovingBall() { // MovingBall 접근을 위한 메소드. 
+		return ball;
+	}
 }

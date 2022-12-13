@@ -6,6 +6,7 @@ public abstract class BrickMap {
 	protected int col;
 	protected int area_width;
 	protected int area_height;
+	protected int round;
 	
 	/**
 	 * Brick의 집합체를 따로 관리하기 위해 만듬
@@ -14,14 +15,15 @@ public abstract class BrickMap {
 	 * @param w BrickMap의 너비
 	 * @param h BrickMap의 높이
 	 */
-	public BrickMap(int r, int c, int w, int h) {
+	public BrickMap(int r, int c, int w, int h, int round) { // 라운드 기능 추가에 따른 int type parameter 추가
 		row = r;
 		col = c;
 		area_width = w;
 		area_height = h;
-		setBrick();
+		this.round = round;
+		setBrick(round);
 	}
-	public abstract void setBrick();
+	public abstract void setBrick(int round); // 라운드 기능 추가에 따른 int type parameter 추가
 	public Brick[][] getMap(){ return GameMap; }
 	public int getRow() { return row; }
 	public int getCol() { return col; }

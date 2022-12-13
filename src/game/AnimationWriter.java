@@ -11,7 +11,7 @@ public abstract class AnimationWriter extends JPanel implements ActionListener{
 	protected ScoreWriter score_writer;
 	protected int box_size;
 	protected Player player;
-
+	protected JFrame f;
 	public AnimationWriter(BoxWriter b, BallWriter ball, BrickWriter brick, ScoreWriter sw, Player p, int size) {
 		box_writer = b;
 		ball_writer = ball;
@@ -22,14 +22,19 @@ public abstract class AnimationWriter extends JPanel implements ActionListener{
 		setFocusable(true);
 		setFocusTraversalKeysEnabled(false);
 
-		JFrame f = new JFrame();
-		f.getContentPane().add(this);
+		f = new JFrame();
+		f.setLayout(new BorderLayout());
+		f.getContentPane().add(this, BorderLayout.CENTER);
 		f.setTitle("Brick Breaker");
 		f.setSize(size + 20, size + 40);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}
 
+	
+	public JFrame getFrame() {
+		return f;
+	}
 	public void paintComponent(Graphics g) {
 		box_writer.paintComponent(g);
 		ball_writer.paintComponent(g);
