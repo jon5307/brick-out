@@ -15,9 +15,9 @@ public class MBrickMap extends BrickMap {
 	private int round = 1;
 	public MBrickMap(int r, int c, int w, int h) {
 		super(r, c, w, h);
+		setBrick();
 	}
 
-	@Override
 	public void setBrick() {
 		GameMap = new MBrick[row][col];
 		for (int i = 0; i < row; i++) {

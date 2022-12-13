@@ -13,7 +13,7 @@ public class RankBoard extends JFrame {
     setTitle("Ranking");
     setSize(300, 300);
     cp = getContentPane();
-    setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
   }
 
   public void ViewRank(Ranker[] rankers){

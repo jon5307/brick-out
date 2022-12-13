@@ -6,7 +6,8 @@ import game.BrickMap;
 public class KBrickMap extends BrickMap {
 
 	private int rest_brick_count = 21;  // static으로 했을 시에 KMovingBall에서 참조를 갱신하지 않게 됨.
-	
+	protected int round;
+
 	//private static int round = 1; // 삭제: round를 파라미터에 추가해서 문제가 사라짐. 
 	//static으로 해야 되더라... 아래 Override한 게 round 선언하고 대입은 안 된 시점에서 실행되는 것 같습니다...  
 	//private int round = 1;
@@ -20,10 +21,12 @@ public class KBrickMap extends BrickMap {
 	 * @param h BrickMap의 높이
 	 */
 	public KBrickMap(int r, int c, int w, int h, int round) { // 라운드 기능 추가에 따른 int type parameter 추가
-		super(r, c, w, h, round);
+		super(r, c, w, h);
+		this.round = round;
+		setBrick(round);
 	}
 
-	@Override
+
 	public void setBrick(int round) { // 라운드 기능 추가에 따른 int type parameter 추가
 		System.out.println("Created");
 		GameMap = new KBrick[row][col];
