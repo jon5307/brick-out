@@ -3,6 +3,7 @@ package ranking;
 import java.sql.*;
 
 public class OnlineLeaderBoard {
+    //데이터베이스 접근
     private Connection conn = null;
     private String url = "jdbc:mysql://db4free.net:3306/brick_out_game";
     private String user = "sohal03";

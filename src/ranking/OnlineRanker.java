@@ -1,17 +1,11 @@
 package ranking;
 
 public class OnlineRanker {
-    private int rrank;
     private String rname;
     private int rscore;
-    public OnlineRanker(int rank, String name, int score){
-        rrank = rank;
+    public OnlineRanker(String name, int score){
         rname = name;
         rscore = score;
-    }
-
-    public int getRank(){
-        return rrank;
     }
 
     public String getName(){

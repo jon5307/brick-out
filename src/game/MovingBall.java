@@ -55,5 +55,5 @@ public abstract class MovingBall {
 		rm.mkRank();
 		rm.showRank();
 	}
-	
+	//계속 할건지 그만둘건지 선택하는 코드 추가
 }

@@ -37,8 +37,7 @@ public class OnlineRankMan {
                 if(i<11){
                     int score = res.getInt("score");
                     String name = res.getString("username");
-                    System.out.println("[" + i + "] " + name + " : " + score);
-                    rankers[i-1] = new OnlineRanker(i, name, score);
+                    rankers[i-1] = new OnlineRanker(name, score);
                     i++;
                 }else {
                     break;

@@ -9,7 +9,7 @@ public class OnlineRW extends JFrame{
     public OnlineRW(int headCount) {
         this.headCount = headCount;
         setTitle("Top 10");
-        setSize(300, 400);
+        setSize(400, 500);
         cp = getContentPane();
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }

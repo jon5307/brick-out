@@ -11,7 +11,7 @@ public class RankBoard extends JFrame {
   public RankBoard(int headCount) {
     this.headCount = headCount;
     setTitle("Ranking");
-    setSize(300, 300);
+    setSize(300, 400);
     cp = getContentPane();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
   }
