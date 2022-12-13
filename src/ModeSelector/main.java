@@ -3,7 +3,7 @@ import KeyBoardGame.StartKeyboard;
 import ranking.*;
 import MouseGame.*;
 
-public class test {
+public class main {
 	public static void main(String[] args) {
 		ModeSelect first_frame = new ModeSelect();
 		RankManager rank_manager = new RankManager();
