@@ -74,6 +74,13 @@ Input Dialog를 띄워 이름을 입력 받는다.  (예시로 READMD.md로 입�
 </br>
 
 # **프로젝트에 대하여**
+## 프로그램 실행
+ - **방법 1**  
+	 Github Release에 업로드 된  .jar 파일을 다운 받아 실행시킨다.  
+- **방법 2**
+	Github의 프로젝트를 다운 받은 후, mySQL 통신과 관련된 java 외부 라이브러리(mysql-connector-j)를 프로젝트에 추가해 실행한다.  
+	
+	- **MySQL Connector/J 다운로드 링크:** https://dev.mysql.com/downloads/connector/j/
 ## 프로그램 설계도 
 ### 모듈 사이의 관계도
 <a href="https://ibb.co/5s2V6ff"><img src="https://i.ibb.co/BTwRtSS/image.jpg" width = "500" alt="image" border="0"></a>
