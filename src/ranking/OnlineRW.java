@@ -11,7 +11,7 @@ public class OnlineRW extends JFrame{
         setTitle("Top 10");
         setSize(400, 500);
         cp = getContentPane();
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     public void ViewORank(OnlineRanker[] rankers){

@@ -20,26 +20,18 @@ public class MAnimationWriter extends AnimationWriter implements MouseListener, 
     double z = Math.sqrt(x * x + y * y);
     double x_vel = 6.4 * x/z;
     double y_vel = -6.4 * y/z;
-    System.out.println("x_vel: " + x_vel + " y_vel: " + y_vel);
     ball_writer.setVelocity(x_vel, y_vel);
   }
 
   @Override
-  public void mousePressed(MouseEvent e) {
-  }
+  public void mousePressed(MouseEvent e) {}
 
   @Override
-  public void mouseReleased(MouseEvent e) {
-
-  }
+  public void mouseReleased(MouseEvent e) {}
 
   @Override
-  public void mouseEntered(MouseEvent e) {
-
-  }
+  public void mouseEntered(MouseEvent e) {}
 
   @Override
-  public void mouseExited(MouseEvent e) {
-
-  }
+  public void mouseExited(MouseEvent e) {}
 }

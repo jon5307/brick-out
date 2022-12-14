@@ -7,8 +7,8 @@ import javax.swing.*;
 import static java.lang.Math.max;
 
 public abstract class MovingBall {
-	protected int x_pos;
-	protected int y_pos;
+	protected double x_pos;
+	protected double y_pos;
 	protected int radius;
 	protected double x_velocity = 5;
 	protected double y_velocity = 5;
@@ -26,11 +26,11 @@ public abstract class MovingBall {
 	}
 	
 	public int xPosition() {
-		return x_pos;
+		return (int) x_pos;
 	}
 	
 	public int yPosition() {
-		return y_pos;
+		return (int) y_pos;
 	}
 	
 	public int radiusOf() {
@@ -40,11 +40,11 @@ public abstract class MovingBall {
 	public abstract void move (int time_units);
 
 	public void boxCrash(){
-		if (container.leftContact(x_pos - radius))
+		if (container.leftContact((int) (x_pos - radius)))
 			x_velocity = Math.abs(x_velocity);
-		else if (container.rightContact(x_pos + radius))
+		else if (container.rightContact((int) (x_pos + radius)))
 			x_velocity = -Math.abs(x_velocity);
-		if (container.topContact(y_pos - radius))
+		else if (container.topContact((int) (y_pos - radius)))
 			y_velocity = Math.abs(y_velocity);
 	}
 	public void brickCrash(Brick b, int x, int y){
@@ -87,6 +87,7 @@ public abstract class MovingBall {
 	public void setVelocity(double x, double y) {
 		x_velocity = x;
 		y_velocity = y;
+		System.out.println("x_velocity: " + x_velocity + ", y_velocity: " + y_velocity);
 	}
 	public void gameOver(){
 		OnlineRankMan rm = new OnlineRankMan();

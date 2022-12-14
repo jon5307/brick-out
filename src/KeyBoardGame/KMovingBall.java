@@ -31,17 +31,17 @@ public class KMovingBall extends MovingBall {
 		x_pos += x_velocity * time_units;
 		y_pos += y_velocity * time_units;
 
-		if (player.isContact(x_pos, y_pos, radius)) {
+		if (player.isContact((int) x_pos, (int) y_pos, radius)) {
 			y_velocity *= -1;
 		}
 
 		Brick[][] game_map;
 		game_map = game.getMap();
-		int x = x_pos;
-		int y = y_pos;
+		int x = (int) x_pos;
+		int y = (int) y_pos;
 		for (int i = 0; i < game_map.length; i++) {
 			for (int j = 0; j < game_map[0].length; j++) {
-				if (game_map[i][j].getVisible() == 1 && game_map[i][j].isContact(x_pos, y_pos, radius)) {
+				if (game_map[i][j].getVisible() == 1 && game_map[i][j].isContact((int) x_pos, (int) y_pos, radius)) {
 					//game_map[i][j].setVisible(0);
 					Brick b = game_map[i][j];
 					boolean dummy = b.getBrickHp() <= 1 ? b.setVisible(0) : b.setBrickHp(); // dummy값은 ? : 연산을 위해 생성.
