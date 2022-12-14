@@ -1,7 +1,6 @@
 package game;
 
-import ranking.RankManager;
-import ranking.Ranker;
+import ranking.*;
 
 import javax.swing.*;
 
@@ -48,10 +47,11 @@ public abstract class MovingBall {
 		y_velocity = y;
 	}
 	public void gameOver(){
-		RankManager rm = new RankManager();
-		rm.regRank(JOptionPane.showInputDialog(null, "Input your name", null), player.getScore());
-		// 점수 저장, 게임 종료 안내 등을 수행하는 코드 작성해야함
-		System.out.println("게임 종료");
+		OnlineRankMan rm = new OnlineRankMan();
+		rm.onlineRegRank(JOptionPane.showInputDialog(null, "Input your name",
+				null), player.getScore());
+		rm.mkRank();
+		rm.showRank();
 	}
-	
+	//계속 할건지 그만둘건지 선택하는 코드 추가
 }
