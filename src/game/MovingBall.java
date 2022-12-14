@@ -4,6 +4,8 @@ import ranking.*;
 
 import javax.swing.*;
 
+import static java.lang.Math.max;
+
 public abstract class MovingBall {
 	protected int x_pos;
 	protected int y_pos;
@@ -37,6 +39,46 @@ public abstract class MovingBall {
 	
 	public abstract void move (int time_units);
 
+	public void boxCrash(){
+		if (container.leftContact(x_pos - radius))
+			x_velocity = Math.abs(x_velocity);
+		else if (container.rightContact(x_pos + radius))
+			x_velocity = -Math.abs(x_velocity);
+		if (container.topContact(y_pos - radius))
+			y_velocity = Math.abs(y_velocity);
+	}
+	public void brickCrash(Brick b){
+		int left = x_pos - b.getX();
+		int right = b.getX() + b.getWidth() - x_pos;
+		int top = y_pos - b.getY();
+		int bottom = b.getY() + b.getHeight() - y_pos;
+		// top-bottom crash
+		if (max(top,bottom) > max(left,right)){
+			// top
+			if (top < bottom) {
+				y_velocity = -Math.abs(y_velocity);
+				y_pos = b.getY() - radius;
+			}
+			// bottom
+			else {
+				y_velocity = Math.abs(y_velocity);
+				y_pos = b.getY() + b.getHeight() + radius;
+			}
+		}
+		// left-right crash
+		else{
+			// left
+			if (left < right) {
+				x_velocity = -Math.abs(x_velocity);
+				x_pos = b.getX() - radius;
+			}
+			// right
+			else {
+				x_velocity = Math.abs(x_velocity);
+				x_pos = b.getX() + b.getWidth() + radius;
+			}
+		}
+	}
 	public void stop() {
 		x_velocity = 0;
 		y_velocity = 0;

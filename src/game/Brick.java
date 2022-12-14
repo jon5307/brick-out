@@ -46,6 +46,7 @@ public abstract class Brick {
 	public int getVisible() { return visible; }
 	public int getX() { return brick_x; }
 	public int getY() { return brick_y; }
+	public int getHeight() { return height; }
 	public int getWidth() { return width; }
 	public int getBrickHp() { return brick_hp; }
 	public boolean setBrickHealth(int n) {brick_hp = n; return true;}

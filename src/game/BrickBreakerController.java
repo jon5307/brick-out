@@ -11,7 +11,7 @@ public class BrickBreakerController {
 	
 	public void runAnimation() {
 		int time_unit = 1;
-		int painting_delay = 20;
+		int painting_delay = 10;
 		while(true) {
 			delay(painting_delay);
 			ball.move(time_unit);
