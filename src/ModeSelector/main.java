@@ -6,7 +6,6 @@ import MouseGame.*;
 public class main {
 	public static void main(String[] args) {
 		ModeSelect first_frame = new ModeSelect();
-		RankManager rank_manager = new RankManager();
 
 		int f_n = 0;
 		while(f_n == 0) {
@@ -16,13 +15,15 @@ public class main {
 		
 		switch(f_n) {
 		case 1:
-			new StartMouse(rank_manager);
+			new StartMouse();
 			break;
 		case 2:
-			new StartKeyboard(rank_manager);
+			new StartKeyboard();
 			break;
 		case 3:
-			rank_manager.ViewRank();
+			OnlineRankMan olm = new OnlineRankMan();
+			olm.mkRank();
+			olm.showRank();
 			break;
 		}
 		

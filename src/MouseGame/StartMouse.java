@@ -1,14 +1,11 @@
 package MouseGame;
 
-import ranking.RankManager;
 import game.*;
 
 public class StartMouse {
 
-	private RankManager rankManager;
 
-	public StartMouse(RankManager rm) {
-		rankManager = rm;
+	public StartMouse() {
 		startGame();
 	}
 

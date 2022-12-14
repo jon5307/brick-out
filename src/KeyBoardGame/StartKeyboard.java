@@ -1,14 +1,11 @@
 package KeyBoardGame;
 
 import game.*;
-import ranking.RankManager;
 
 public class StartKeyboard {
 
-	private RankManager rankManager;
 	
-	public StartKeyboard(RankManager rm){
-		rankManager = rm;
+	public StartKeyboard(){
 		startGame();
 	}
 	
