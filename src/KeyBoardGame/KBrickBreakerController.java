@@ -17,7 +17,7 @@ public class KBrickBreakerController extends BrickBreakerController{
 	@Override
 	public void runAnimation() {
 		int time_unit = 1;
-		int painting_delay = 20;
+		int painting_delay = 10;
 		boolean alive = true;
 		while(alive) {
 			writer.getParent().repaint();

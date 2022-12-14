@@ -10,8 +10,8 @@ public abstract class MovingBall {
 	protected double x_pos;
 	protected double y_pos;
 	protected int radius;
-	protected double x_velocity = 5;
-	protected double y_velocity = 5;
+	protected double x_velocity = 2.5;
+	protected double y_velocity = 2.5;
 	protected Box container;
 	protected BrickMap game;
 	protected Player player;
