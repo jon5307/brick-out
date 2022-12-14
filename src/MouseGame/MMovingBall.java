@@ -18,6 +18,10 @@ public class MMovingBall extends MovingBall {
 		y_pos += y_velocity * time_units;
 
 		System.out.println("xv =" + x_velocity + ", yv = " + y_velocity);
+		// 바닥에서 떨어짐
+		if (x_velocity > 0 || y_velocity > 0) {
+			wasAtPlayer = false;
+		}
 		// 바닥에 닿음
 		if (player.isContact(x_pos, y_pos, radius) && !wasAtPlayer) {
 			stop();
@@ -29,13 +33,11 @@ public class MMovingBall extends MovingBall {
 			wasAtPlayer = true;
 			((MBrickMap)game).brickDown();
 		}
-		// 바닥에서 떨어짐
-		if (x_velocity > 0 || y_velocity > 0) {
-			wasAtPlayer = false;
-		}
 
 		Brick[][] game_map;
 		game_map = game.getMap();
+		int x = x_pos;
+		int y = y_pos;
 
 		for (int i = 0; i < game_map.length; i++) {
 			for (int j = 0; j < game_map[0].length; j++) {
@@ -46,7 +48,7 @@ public class MMovingBall extends MovingBall {
 					// 공이 닿았을 때 브릭의 체력이 0이면(== 닿기 전까지 체력이 1 이하) visible을 0으로, 그렇지 않으면 brick_hp -= 1
 					if (dummy) {
 					}
-					brickCrash(b);
+					brickCrash(b,x,y);
 				}
 			}
 		}

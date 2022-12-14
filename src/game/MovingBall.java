@@ -47,11 +47,11 @@ public abstract class MovingBall {
 		if (container.topContact(y_pos - radius))
 			y_velocity = Math.abs(y_velocity);
 	}
-	public void brickCrash(Brick b){
-		int left = x_pos - b.getX();
-		int right = b.getX() + b.getWidth() - x_pos;
-		int top = y_pos - b.getY();
-		int bottom = b.getY() + b.getHeight() - y_pos;
+	public void brickCrash(Brick b, int x, int y){
+		int left = x - b.getX();
+		int right = b.getX() + b.getWidth() - x;
+		int top = y - b.getY();
+		int bottom = b.getY() + b.getHeight() - y;
 		// top-bottom crash
 		if (max(top,bottom) > max(left,right)){
 			// top

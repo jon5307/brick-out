@@ -37,6 +37,8 @@ public class KMovingBall extends MovingBall {
 
 		Brick[][] game_map;
 		game_map = game.getMap();
+		int x = x_pos;
+		int y = y_pos;
 		for (int i = 0; i < game_map.length; i++) {
 			for (int j = 0; j < game_map[0].length; j++) {
 				if (game_map[i][j].getVisible() == 1 && game_map[i][j].isContact(x_pos, y_pos, radius)) {
@@ -50,7 +52,7 @@ public class KMovingBall extends MovingBall {
 						}
 						player.plusScore(); //dummy가 참이면 브릭을 하나 부순 것이므로 점수를 올려줌
 					}
-					brickCrash(b);
+					brickCrash(b,x,y);
 				}
 			}
 		}
