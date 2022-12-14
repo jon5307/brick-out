@@ -6,8 +6,6 @@ import java.awt.*;
 import java.util.Random;
 
 public class KBrick extends Brick {
-	
-	
 	/**
 	 * Brick을 하나씩 정의
 	 *
@@ -26,7 +24,7 @@ public class KBrick extends Brick {
 	@Override
 	public void setBrick(int round) {
 		Random random = new Random();
-		brick_hp = random.nextInt(round, round+3); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
+		brick_hp = round + random.nextInt(3); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
 	}
 
 	@Override
@@ -46,6 +44,4 @@ public class KBrick extends Brick {
 		}
 		return false;
 	}
-	
-	
 }

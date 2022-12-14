@@ -28,7 +28,7 @@ public class MBrick extends Brick {
 	public void setBrick(int round) {
 		Random random = new Random();
 		if (floor == 0)
-			brick_hp = round * random.nextInt(0, 2); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
+			brick_hp = round * random.nextInt(2); // brick_hp를 무작위로 설정. 이는 round 수에 의존.
 		else
 			brick_hp = round;
 		if (brick_hp == 0) {
